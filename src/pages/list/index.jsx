@@ -4,7 +4,7 @@ import asyncComponent from '../../components/async'
 import CompoentHeader from './header/header'
 const ComponentChoice = asyncComponent(() => import('./choice').then(module => module.default))
 const CompoentDynamic = asyncComponent(() => import('./dynamic').then(module => module.default))
-import CompoentBottom from './bottom'
+const CompoentEra = asyncComponent(() => import('./era').then(module => module.default))
 export default class Index extends Component {
   render() {
     return (
@@ -13,8 +13,8 @@ export default class Index extends Component {
           <Switch>
             <Route path="/list" exact component={ComponentChoice}></Route>
             <Route path="/list/dynamic" component={CompoentDynamic}></Route>
+            <Route path="/list/era" component={CompoentEra}></Route>
           </Switch>
-          <CompoentBottom />
        </div>
     )
   }

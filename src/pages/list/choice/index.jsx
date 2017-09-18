@@ -10,6 +10,7 @@ import wwwImg from '../../../assets/imgs/www.png'
 export default class ComponentChoice extends Component {
   render() {
     return (
+      <div>
       <ul className="index-list">
         <li className="index-list-li">
           <a href="http://jhsjk.people.cn/?from=timeline">
@@ -36,18 +37,22 @@ export default class ComponentChoice extends Component {
           </Link>
         </li>
         <li className="index-list-li">
-          <Link to="/list/history/era">
+          <Link to="/list/era">
             <img className="index-list-img" src={eraPioneerImg} alt=""/>
             <span className="index-list-span">时代先锋</span>
           </Link>
         </li>
         <li className="index-list-li li-right">
-          <Link to="/list/history/movie">
+          <Link to="/list/movie">
             <img className="index-list-img" src={movieImg} alt=""/>
             <span className="index-list-span">影视资料</span>
           </Link>
         </li>
       </ul>
+      <bottom className="list-bottom">
+        <p className="bottom-introuduce">©红岩网校工作站</p>
+     </bottom>
+     </div>
     )
   }
 }
