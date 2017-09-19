@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './index.less'
 import political from '../../../assets/imgs/political.jpg';
-import '../../../assets/icon/iconfont.css'
+
 export default class Loading extends Component {
   constructor() {
     super();
