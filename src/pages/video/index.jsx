@@ -23,7 +23,7 @@ export default class Loading extends Component {
     render() {
         return (
         <div className="movie-list">
-            <video id="html5Player" src="http://asp.cntv.lxdns.com/asp/hls/main/0303000a/3/default/4a5b8aede7a44168baa7692ba4451b35/main.m3u8?maxbr=2048&amp;minbr=400"></video>
+            <video controls="controls" data-x-webkit-airplay="true" data-playsinline="" data-webkit-playsinline="true" src="https://www.newscctv.net/tap2cdn/video/short_video/2017/09/19/c0c76d134c35d344f1fc380bc7d72925/index.m3u8" poster="https://www.newscctv.net/tap2cdn/video/images//images/10003/449/1/20170919130800395.gif" style={{fontSize: '0px',width: '100%'}}></video>
         </div>
         )
     }
