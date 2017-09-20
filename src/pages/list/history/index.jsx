@@ -6,12 +6,13 @@ export default class Loading extends Component {
         this.state = {
             list: []
         };
+        document.title = '党史辞典';
     }
     componentWillMount() {
         let mothod = {
             method: 'GET'
         }
-        fetch('http://32p2p8.natappfree.cc/RedWeb/TextUrl.php',mothod)
+        fetch('http://kfzkyi.natappfree.cc/RedWeb/TextUrl.php',mothod)
         .then(res => res.json())
         .then(data => {
             this.setState({list: data})
