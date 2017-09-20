@@ -14,7 +14,6 @@ export default class Loading extends Component {
         .then(res => res.json())
         .then(data => {
             this.setState({now: data[this.props.match.params.id]})
-            console.log(this.state.now)
             document.title = this.state.now.name;
         })
     }
