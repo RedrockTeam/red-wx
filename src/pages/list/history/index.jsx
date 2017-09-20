@@ -12,7 +12,7 @@ export default class Loading extends Component {
         let mothod = {
             method: 'GET'
         }
-        fetch('http://kfzkyi.natappfree.cc/RedWeb/TextUrl.php',mothod)
+        fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/TextUrl.php',mothod)
         .then(res => res.json())
         .then(data => {
             this.setState({list: data})
