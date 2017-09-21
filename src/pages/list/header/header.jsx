@@ -5,7 +5,7 @@ export default class Loading extends Component {
   render() {
     return (
 	  <header>
-        <img className="header-img" src={bannerImg} alt=""/>
+        <img className="header-image" src={bannerImg} alt=""/>
       </header>
     )
   }

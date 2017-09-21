@@ -13,12 +13,12 @@ const asyncComponent = getComponent => {
     componentWillMount() {
       if (!this.state.Component) {
         // 假装有延迟
-        setTimeout(() => {
-          getComponent().then(Component => {
-            AsyncComponent.Component = Component
-            this.setState({Component})
-          })
-        }, 0)
+        //setTimeout(() => {
+        getComponent().then(Component => {
+          AsyncComponent.Component = Component
+          this.setState({Component})
+        })
+       // }, 0)
       }
     }
     render() {

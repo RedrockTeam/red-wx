@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import startImg from '../../../assets/imgs/start.png'
 import './index.less'
 export default class Loading extends Component {
     constructor() {
@@ -13,6 +14,7 @@ export default class Loading extends Component {
         let mothod = {
             method: 'GET'
         }
+        let arr = [];
         fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/VideoUrl.php',mothod)
         .then(res => res.json())
         .then(data => {
@@ -29,17 +31,23 @@ export default class Loading extends Component {
     }
    
     render() {
-        const list = this.state.list.map((item,index) => 
-        (<li className="movie-list-li" key={index} onTouchStart={(e) => this.hoverStart(e)} onTouchEnd={(e) => this.hoverEnd(e)}>
-            <Link to={`/video/${index}`} className="movie-list-a">
-                {item.name}
-            </Link>
+        const list = this.state.list.map((item,index) => {
+            let liStyle = index%2 === 0 ? 'movie-list-li' : 'movie-list-li right';
+            return (<li className={liStyle} key={index}>
+                    <Link  to={`/video/${index}`}>
+                        <img src={item.picurl}  className="movie-list-img" alt=""/>
+                        <p className="movie-list-title">{item.name}</p>
+                    </Link>
+                    <img src={startImg} className="movie-list-start" alt=""/>
             </li>)
-        )
+                
+        })
+
         return (
-        <ul className="movie-list">
-            {list}
-        </ul>
-        )
+        <div className="movie-background">
+            <ul className="movie-list">
+                {list}
+            </ul>
+        </div>)
     }
 }
