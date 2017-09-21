@@ -19,10 +19,10 @@ export default class Loading extends Component {
         })
     }
     hoverStart(e) {
-        e.target.className = 'hover history-list-a';
+        e.target.classList.add('hover');
     }
     hoverEnd(e) {
-        e.target.className ='history-list-a';
+        e.target.classList.remove('hover')
     }
     render() {
         const list = this.state.list.map((item,index) => 
