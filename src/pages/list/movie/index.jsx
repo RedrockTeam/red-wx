@@ -33,13 +33,13 @@ export default class Loading extends Component {
     render() {
         const list = this.state.list.map((item,index) => {
             let liStyle = index%2 === 0 ? 'movie-list-li' : 'movie-list-li right';
-            return (<li className={liStyle} key={index}>
-                    <Link  to={`/video/${index}`}>
-                        <img src={item.picurl}  className="movie-list-img" alt=""/>
-                        <p className="movie-list-title">{item.name}</p>
-                    </Link>
+            return (<Link  to={`/video/${index}`}>
+                <li className={liStyle} key={index}>
+                    <img src={item.picurl}  className="movie-list-img" alt=""/>
+                    <p className="movie-list-title">{item.name}</p>
                     <img src={startImg} className="movie-list-start" alt=""/>
-            </li>)
+                </li>
+            </Link>)
                 
         })
 
