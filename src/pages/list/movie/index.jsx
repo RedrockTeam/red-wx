@@ -15,7 +15,7 @@ export default class Loading extends Component {
             method: 'GET'
         }
         let arr = [];
-        fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/VideoUrl.php',mothod)
+        fetch('/red-wx/RedWeb/RedWeb/VideoUrl.php',mothod)
         .then(res => res.json())
         .then(data => {
             this.setState({list: data})
@@ -33,8 +33,8 @@ export default class Loading extends Component {
     render() {
         const list = this.state.list.map((item,index) => {
             let liStyle = index%2 === 0 ? 'movie-list-li' : 'movie-list-li right';
-            return (<Link  to={`/video/${index}`}>
-                <li className={liStyle} key={index}>
+            return (<Link key={index} to={`/video/${index}`}>
+                <li className={liStyle}>
                     <img src={item.picurl}  className="movie-list-img" alt=""/>
                     <p className="movie-list-title">{item.name}</p>
                     <img src={startImg} className="movie-list-start" alt=""/>
