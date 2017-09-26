@@ -16,18 +16,17 @@ export default class Loading extends Component {
     //fetch
     //carousel
     let num = 1;
+    let maxNum = this.state.list.length + 1;
     let imgWidth = parseInt(window.getComputedStyle(this.refs.carouselUl.children[0]).width);
-    console.log(images)
-    //console.log(window.getComputedStyle(this.refs.carouselUl.children[0]).width)
     setInterval(() => {
-      if(num < 4) {
+      if(num < maxNum) {
        this.refs.carouselUl.style.left = - imgWidth * num + 'px';
        num++;
       } else {
         this.refs.carouselUl.style.left = '0px';
         num = 0;
       }
-    },1000)
+    },1500)
     
   }
   render() {
@@ -51,8 +50,8 @@ export default class Loading extends Component {
             </li>
             {li}
             <li className="carousel-li">
-              <a href={list[2].url}>
-                <img src={list[2].img} alt="" className="carousel-img"/>
+              <a href={list[list.length-1].url}>
+                <img src={list[list.length-1].img} alt="" className="carousel-img"/>
               </a>
             </li>
           </ul>
