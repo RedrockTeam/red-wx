@@ -24,19 +24,19 @@ export default class ComponentChoice extends Component {
             <span className="index-list-span">基层动态</span>
           </Link>
         </li>
-        <li className="index-list-li">
+        <li className="index-list-li li-right">
           <Link to="/list/www">
             <img className="index-list-img" src={wwwImg} alt=""/>
             <span className="index-list-span">网络活动</span>
           </Link>
         </li>
-        <li className="index-list-li li-right">
+        <li className="index-list-li">
           <Link to="/list/history">
             <img className="index-list-img" src={historyImg} alt=""/>
             <span className="index-list-span">党史辞典</span>
           </Link>
         </li>
-        <li className="index-list-li">
+        <li className="index-list-li li-right">
           <Link to="/list/era">
             <img className="index-list-img" src={eraPioneerImg} alt=""/>
             <span className="index-list-span">时代先锋</span>
@@ -49,7 +49,27 @@ export default class ComponentChoice extends Component {
           </Link>
         </li>
       </ul>
-      <bottom className="list-bottom">
+      <bottom className="bottom">
+        <ul className="bottom-list">
+          <li className="bottom-list-li">
+            <a className="bottom-list-a" href="">人民网</a>
+          </li>
+          <li className="bottom-list-li">
+            <a className="bottom-list-a" href="">光明网</a>
+          </li>
+          <li className="bottom-list-li">
+            <a className="bottom-list-a" href="">新华网</a>
+          </li>
+          <li className="bottom-list-li">
+            <a className="bottom-list-a" href="">七一网</a>
+          </li>
+          <li className="bottom-list-li">
+            <a className="bottom-list-a" href="">中青网</a>
+          </li>
+          <li className="bottom-list-li">
+            <a className="bottom-list-a" href="">华龙网</a>
+          </li>
+        </ul>
         <p className="bottom-introuduce">©红岩网校工作站</p>
      </bottom>
      </div>
