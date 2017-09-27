@@ -7,7 +7,9 @@ export default class Loading extends Component {
   constructor() {
     super();
     this.state = {
-      list: []
+      list: [{img:images[0],url:'http://fanyi.baidu.com/?aldtype=16047#zh/en/%E8%BD%AE%E6%92%AD'},
+      {img:images[1],url:'http://fanyi.baidu.com/?aldtype=16047#zh/en/%E8%BD%AE%E6%92%AD'},
+      {img:images[2],url:'http://fanyi.baidu.com/?aldtype=16047#zh/en/%E8%BD%AE%E6%92%AD'}]
     }
   }
   componentWillMount() {
@@ -15,11 +17,11 @@ export default class Loading extends Component {
             method: 'GET'
         }
      
-    fetch('/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
+    fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
     .then(res => res.json())
     .then(data => {
         this.setState({list: data})
-        //console.log(this.state.list)
+        console.log(this.state.list)
     })
     
   }
