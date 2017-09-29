@@ -21,7 +21,18 @@ export default class Loading extends Component {
 	  };
     document.title = '时代先锋';
   }
-
+componentWillMount() {
+  if(this.props.match.params.type === 'history') {
+    let mothod = {
+        method: 'GET'
+    }
+    fetch('/red-wx/RedWeb/RedWeb/TextUrl.php',mothod)
+    .then(res => res.json())
+    .then(data => {
+        this.setState({list: data})
+    })
+  }
+}
   render() {
     const list = this.state.list.map((item,index) => 
       (<li className="era-list-li" key={index}>
@@ -29,7 +40,7 @@ export default class Loading extends Component {
             <img className="era-list-img" src={political} alt=""/>
             <div className="era-list-center">
                 <p className="era-list-name">{item.name}</p>
-                <p className="era-list-title">{item.title}</p>
+                <p className="era-list-title">{item.title === undefined ? '' : item.title}</p>
             </div>
             <i className="iconfont icon-jiantou"></i>
           </a>

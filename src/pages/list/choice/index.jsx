@@ -31,13 +31,13 @@ export default class ComponentChoice extends Component {
           </Link>
         </li>
         <li className="index-list-li">
-          <Link to="/list/history">
+          <Link to="/list/era/history">
             <img className="index-list-img" src={historyImg} alt=""/>
             <span className="index-list-span">党史辞典</span>
           </Link>
         </li>
         <li className="index-list-li li-right">
-          <Link to="/list/era">
+          <Link to="/list/era/era">
             <img className="index-list-img" src={eraPioneerImg} alt=""/>
             <span className="index-list-span">时代先锋</span>
           </Link>
@@ -52,22 +52,22 @@ export default class ComponentChoice extends Component {
       <bottom className="bottom">
         <ul className="bottom-list">
           <li className="bottom-list-li">
-            <a className="bottom-list-a" href="">人民网</a>
+            <a className="bottom-list-a" href="http://www.people.com.cn/">人民网</a>
           </li>
           <li className="bottom-list-li">
-            <a className="bottom-list-a" href="">光明网</a>
+            <a className="bottom-list-a" href="http://www.gmw.cn/">光明网</a>
           </li>
           <li className="bottom-list-li">
-            <a className="bottom-list-a" href="">新华网</a>
+            <a className="bottom-list-a" href="http://www.xinhuanet.com/">新华网</a>
           </li>
           <li className="bottom-list-li">
-            <a className="bottom-list-a" href="">七一网</a>
+            <a className="bottom-list-a" href="http://www.12371.gov.cn/">七一网</a>
           </li>
           <li className="bottom-list-li">
-            <a className="bottom-list-a" href="">中青网</a>
+            <a className="bottom-list-a" href="https://www.youth.cn/">中青网</a>
           </li>
           <li className="bottom-list-li">
-            <a className="bottom-list-a" href="">华龙网</a>
+            <a className="bottom-list-a" href="http://www.cqnews.net/">华龙网</a>
           </li>
         </ul>
         <p className="bottom-introuduce">©红岩网校工作站</p>

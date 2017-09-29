@@ -16,7 +16,7 @@ export default class Index extends Component {
           <Switch>
             <Route path="/list" exact component={ComponentChoice}></Route>
             <Route path="/list/dynamic" component={CompoentDynamic}></Route>
-            <Route path="/list/era" component={CompoentEra}></Route>
+            <Route path="/list/era/:type" component={CompoentEra}></Route>
             <Route path="/list/history" component={CompoentHistory}></Route>
             <Route path="/list/www" component={CompoentWww}></Route>
             <Route path="/list/movie" component={CompoentMovie}></Route>
