@@ -8,6 +8,12 @@ import historyImg from '../../../assets/imgs/history.png'
 import movieImg from '../../../assets/imgs/movie.png'
 import wwwImg from '../../../assets/imgs/www.png'
 export default class ComponentChoice extends Component {
+  // changeTitle() {
+  //   setTimeout(()=>{
+      
+  //   })
+    
+  // }
   render() {
     return (
       <div>
