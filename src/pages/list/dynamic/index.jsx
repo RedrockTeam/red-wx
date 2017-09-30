@@ -19,7 +19,7 @@ export default class Loading extends Component {
         {img: images[9],title:'软件工程学院集中开展“学习总书记讲话 做合格共青团员”专题组织生活会',url:'https://mp.weixin.qq.com/s?__biz=MjM5MzU5NzA3NQ==&mid=2650556734&idx=1&sn=521851b385bd3c1c374a3bcf76983f38&chksm=be9c7ac289ebf3d4969f513ce00e5bf6641c7738d3c3af01137262200d5f764f3e5a1a7a7112&mpshare=1&scene=23&srcid=0504dtaRG4hhGNo61gc9R6WA#rd'}
       ]
 		};
-    document.title = '基层动态';
+    //document.title = '基层动态';
   }
 
   render() {

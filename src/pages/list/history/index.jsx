@@ -6,7 +6,7 @@ export default class Loading extends Component {
         this.state = {
             list: []
         };
-        document.title = '党史辞典';
+        //document.title = '党史辞典';
     }
     componentWillMount() {
         let mothod = {

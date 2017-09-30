@@ -19,7 +19,7 @@ export default class Loading extends Component {
             {name:'柯小海',title:'不干事 凭什么让人相信你',url:'http://biaozhang.12371.cn/2017/08/19/VIDE1503144720334133.shtml'}
         ]
 	  };
-    document.title = '时代先锋';
+    //document.title = '时代先锋';
   }
 componentWillMount() {
   if(this.props.match.params.type === 'history') {

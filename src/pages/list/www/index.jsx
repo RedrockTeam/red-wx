@@ -22,7 +22,7 @@ export default class Loading extends Component {
                 // {img:images[12],title: '奔跑吧兄弟',url:'https://redrock.cqupt.edu.cn/game/run#rd?sukey=66d4519b2d3854cd9c23252e1b82ad95f89538084ef43cce1e555cdff1b3d7644bc98dde661bdcd23f2cb87d8df67d42'}
             ]
         };
-        document.title = '网络活动';
+        //document.title = '网络活动';
     }
 
     render() {
