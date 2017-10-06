@@ -17,11 +17,22 @@ export default class Loading extends Component {
         {img: images[7],title:'学习总书记讲话 做合格共青团员|软件工程学院“五四”表彰暨青年榜样分享交流会',url:'https://mp.weixin.qq.com/s/e7N_-CBkMVaqASRWrxtUBw'},
         {img: images[8],title:'国际学院2016年度共青团暨科技竞赛表彰大会',url:'http://mp.weixin.qq.com/s/ar-hDtafFNqAagbO2jKvuA'},
         {img: images[9],title:'软件工程学院集中开展“学习总书记讲话 做合格共青团员”专题组织生活会',url:'https://mp.weixin.qq.com/s?__biz=MjM5MzU5NzA3NQ==&mid=2650556734&idx=1&sn=521851b385bd3c1c374a3bcf76983f38&chksm=be9c7ac289ebf3d4969f513ce00e5bf6641c7738d3c3af01137262200d5f764f3e5a1a7a7112&mpshare=1&scene=23&srcid=0504dtaRG4hhGNo61gc9R6WA#rd'}
-      ]
+      ],
+      news: []
 		};
     //document.title = '基层动态';
   }
-
+  componentWillMount() {
+    console.log('will');
+    let mothod = {
+        method: 'GET'
+    }
+    fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/news.php?page=0&items=4',mothod)
+    .then(res => res.json())
+    .then(data => {
+        this.setState({news: data.Data})
+    })
+  }
   render() {
     const list = this.state.list.map((item,index) => 
       (<li className="dynamic-list-li" key={index}>
@@ -31,9 +42,18 @@ export default class Loading extends Component {
           </a>
         </li>)
     )
+    const news = this.state.news.map((item,index) => 
+      (<li className="dynamic-list-li" key={index}>
+          <a href={item.link}>
+            <img className="dynamic-list-img" src={item.pic_url} alt=""/>
+              <p className="dynamic-list-title">{item.title}</p>
+          </a>
+        </li>)
+    )
     return (
       <ul className="dynamic-list">
         {list}
+        {news}
       </ul>
     )
   }
