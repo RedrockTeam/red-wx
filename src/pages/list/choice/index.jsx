@@ -19,9 +19,9 @@ export default class ComponentChoice extends Component {
       <div>
       <ul className="index-list">
         <li className="index-list-li">
-          <a href="http://jhsjk.people.cn/?from=timeline">
+          <a href="http://19th.cpcnews.cn/GB/147/index.html?from=singlemessage&isappinstalled=0">
             <img className="index-list-img" src={speechImg} alt=""/>
-            <span className="index-list-span">学习讲话</span>
+            <span className="index-list-span">最新报道</span>
           </a>
         </li>
         <li className="index-list-li li-right">
