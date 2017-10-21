@@ -61,7 +61,7 @@ export default class Loading extends Component {
         moveEndY = e.changedTouches[0].pageY;
         X = moveEndX - startX;
         Y = moveEndY - startY;
-        if( Math.abs(X) > Math.abs(Y) && Math.abs(X) > 5 ) {
+        if( Math.abs(X) > Math.abs(Y) && Math.abs(X) > 0 ) {
           if(num < maxNum) {
             num++;
             this.refs.carouselUl.style.left = - imgWidth * num + 'px';
@@ -69,7 +69,7 @@ export default class Loading extends Component {
             this.refs.carouselUl.style.left = '0px';
             num = 0;
           }
-        } else if(Math.abs(X) > Math.abs(Y) && X < -5) {
+        } else if(Math.abs(X) > Math.abs(Y) && X < 0) {
           if(num > 1) {
             num--;
             this.refs.carouselUl.style.left = - imgWidth * num + 'px';
