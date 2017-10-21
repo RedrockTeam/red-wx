@@ -26,7 +26,7 @@ export default class Loading extends Component {
     let mothod = {
         method: 'GET'
     }
-    fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/dynamic.php',mothod)
+    fetch('/red-wx/RedWeb/RedWeb/dynamic.php',mothod)
     .then(res => res.json())
     .then(data => {
         this.setState({list: data.Data})

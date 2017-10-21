@@ -3,7 +3,7 @@ import './header.less'
 import titleImg from '../../../assets/imgs/title.png'
 const requireContext = require.context("../../../assets/imgs", true,/carousel\d(.*)(png|jpe?g)(\?.*)?$/);
 const images = requireContext.keys().map(requireContext);
-const imgUrl = 'http://hongyan.cqupt.edu.cn/red-wx/RedWeb/public/'
+const imgUrl = '/red-wx/RedWeb/public/'
 export default class Loading extends Component {
   constructor() {
     super();
