@@ -20,7 +20,7 @@ export default class Loading extends Component {
             method: 'GET'
         }
      
-    fetch('/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
+    fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
     .then(res => res.json())
     .then(data => {
       console.log('fetch')
@@ -83,29 +83,28 @@ export default class Loading extends Component {
   render() {
     const list = this.state.list;
     const li = list.map((item,index) => (
-      <a href={item.url}>
-        <li className="carousel-li" key={index}>
-            <img src={item.img} alt="" className="carousel-img"/>
-        </li>
-      </a>
+      <li className="carousel-li" key={index}>
+        <a className="carousel-a" href={item.url}>
+          <img src={item.img} alt="" className="carousel-img"/>
+        </a>
+      </li>
     ))
-    //console.log(list)
     return (
 	  <header>
         <img className="title-image" src={titleImg} alt=""/>
         <div className="carousel" ref="carousel">
-          <ul className="carousel-ul" ref="carouselUl">
-            <a href={list[0].url}>
-              <li className="carousel-li"> 
-                  <img src={list[0].img} alt="" className="carousel-img"/>
-              </li>
-            </a>
+          <ul className="carousel-ul">
+            <li className="carousel-li">
+              <a className="carousel-a" href={list[0].url}>
+                <img src={list[0].img} alt="" className="carousel-img"/>
+              </a>
+            </li>
             {li}
-            <a href={list[list.length-1].url}>
-              <li className="carousel-li">
-                  <img src={list[list.length-1].img} alt="" className="carousel-img"/>
-              </li>
-            </a>
+            <li className="carousel-li">
+              <a className="carousel-a" href={list[list.length-1].url}>
+                <img src={list[list.length-1].img} alt="" className="carousel-img"/>
+              </a>
+            </li>
           </ul>
         </div>
       </header>
