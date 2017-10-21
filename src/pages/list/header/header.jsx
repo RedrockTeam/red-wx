@@ -3,7 +3,7 @@ import './header.less'
 import titleImg from '../../../assets/imgs/title.png'
 const requireContext = require.context("../../../assets/imgs", true,/carousel\d(.*)(png|jpe?g)(\?.*)?$/);
 const images = requireContext.keys().map(requireContext);
-const imgUrl = '/red-wx/RedWeb/public/'
+const imgUrl = 'https://wx.idsbllp.cn/red-wx/RedWeb/public/'
 export default class Loading extends Component {
   constructor() {
     super();
@@ -20,10 +20,10 @@ export default class Loading extends Component {
             method: 'GET'
         }
      
-    fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
+    fetch('https://wx.idsbllp.cn/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
     .then(res => res.json())
     .then(data => {
-      console.log('fetch')
+      //console.log('fetch')
         this.setState({list: data})
         
     })
@@ -51,12 +51,12 @@ export default class Loading extends Component {
       }
     },3000)
     carousel.addEventListener('touchstart',(e) => {
-      e.preventDefault();
+      //e.preventDefault();
       startX = e.touches[0].pageX;
       startY = e.touches[0].pageY;
     })
-    carousel.addEventListener('touchmove',(e) => {
-        e.preventDefault();
+    carousel.addEventListener('touchend',(e) => {
+        //e.preventDefault();
         moveEndX = e.changedTouches[0].pageX;
         moveEndY = e.changedTouches[0].pageY;
         X = moveEndX - startX;
@@ -93,7 +93,7 @@ export default class Loading extends Component {
 	  <header>
         <img className="title-image" src={titleImg} alt=""/>
         <div className="carousel" ref="carousel">
-          <ul className="carousel-ul">
+          <ul className="carousel-ul" ref="carouselUl">
             <li className="carousel-li">
               <a className="carousel-a" href={list[0].url}>
                 <img src={list[0].img} alt="" className="carousel-img"/>
