@@ -25,16 +25,20 @@ export default class ComponentChoice extends Component {
           </a>
         </li>
         <li className="index-list-li li-right">
+          <a href="http://mp.weixin.qq.com/s/48hYOpHW-qDhOeb6qHW2wQ">
+            <img className="index-list-img" src={dynamicImg} alt=""/>
+            <span className="index-list-span">学习报告</span>
+          </a>
+        </li>
+        <li className="index-list-li li-right">
           <Link to="/list/dynamic">
             <img className="index-list-img" src={dynamicImg} alt=""/>
             <span className="index-list-span">基层动态</span>
           </Link>
-        </li>
-        <li className="index-list-li li-right">
-          <Link to="/list/www">
+          {/*<Link to="/list/www">
             <img className="index-list-img" src={wwwImg} alt=""/>
             <span className="index-list-span">网络活动</span>
-          </Link>
+          </Link>*/}
         </li>
         <li className="index-list-li">
           <Link to="/list/era/history">
@@ -43,10 +47,14 @@ export default class ComponentChoice extends Component {
           </Link>
         </li>
         <li className="index-list-li li-right">
-          <Link to="/list/era/era">
+          <Link to="/list/www">
+            <img className="index-list-img" src={wwwImg} alt=""/>
+            <span className="index-list-span">网络活动</span>
+          </Link>
+          {/*<Link to="/list/era/era">
             <img className="index-list-img" src={eraPioneerImg} alt=""/>
             <span className="index-list-span">时代先锋</span>
-          </Link>
+          </Link>*/}
         </li>
         <li className="index-list-li li-right">
           <Link to="/list/movie">

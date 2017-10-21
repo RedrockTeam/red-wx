@@ -3,13 +3,16 @@ import './header.less'
 import titleImg from '../../../assets/imgs/title.png'
 const requireContext = require.context("../../../assets/imgs", true,/carousel\d(.*)(png|jpe?g)(\?.*)?$/);
 const images = requireContext.keys().map(requireContext);
+const imgUrl = 'http://hongyan.cqupt.edu.cn/red-wx/RedWeb/public/'
 export default class Loading extends Component {
   constructor() {
     super();
     this.state = {
-      list: [{img:images[0],url:'http://fanyi.baidu.com/?aldtype=16047#zh/en/%E8%BD%AE%E6%92%AD'},
-      {img:images[1],url:'http://fanyi.baidu.com/?aldtype=16047#zh/en/%E8%BD%AE%E6%92%AD'},
-      {img:images[2],url:'http://fanyi.baidu.com/?aldtype=16047#zh/en/%E8%BD%AE%E6%92%AD'}]
+      list: [
+      {img:imgUrl + 'carousel1.jpg',url:'http://xwzx.cqupt.edu.cn/cqupt_xwzx/news.jsp?id=706JG61J98M6DQ65'},
+      {img:imgUrl + 'carousel2.jpg',url:'http://xwzx.cqupt.edu.cn/cqupt_xwzx/news.jsp?id=71UC5RKU2W141868'},
+      {img:imgUrl + 'carousel2.jpg',url:'http://mp.weixin.qq.com/s/bmqEWlK-f6vGx8vvjYTgfg'}
+      ]
     }
   }
   componentWillMount() {
@@ -17,20 +20,27 @@ export default class Loading extends Component {
             method: 'GET'
         }
      
-    fetch('/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
+    fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
     .then(res => res.json())
     .then(data => {
+      console.log('fetch')
         this.setState({list: data})
-        console.log(this.state.list)
+        
     })
     
   }
   componentDidMount() {
-    //fetch
     //carousel
-    let num = 1;
-    let maxNum = this.state.list.length + 1;
-    let imgWidth = parseInt(window.getComputedStyle(this.refs.carouselUl.children[0]).width);
+    let carousel = this.refs.carousel,
+    startX,
+    startY,
+    moveEndX,
+    moveEndY,
+    X,
+    Y,
+    num = 1,
+    maxNum = this.state.list.length + 1,
+    imgWidth = parseInt(window.getComputedStyle(this.refs.carouselUl.children[0]).width);
     setInterval(() => {
       if(num < maxNum) {
        this.refs.carouselUl.style.left = - imgWidth * num + 'px';
@@ -40,7 +50,35 @@ export default class Loading extends Component {
         num = 0;
       }
     },1500)
-    
+    carousel.addEventListener('touchstart',(e) => {
+      e.preventDefault();
+      startX = e.touches[0].pageX;
+      startY = e.touches[0].pageY;
+    })
+    carousel.addEventListener('touchmove',(e) => {
+        e.preventDefault();
+        moveEndX = e.changedTouches[0].pageX;
+        moveEndY = e.changedTouches[0].pageY;
+        X = moveEndX - startX;
+        Y = moveEndY - startY;
+        if( Math.abs(X) > Math.abs(Y) && Math.abs(X) > 5 ) {
+          if(num < maxNum) {
+            num++;
+            this.refs.carouselUl.style.left = - imgWidth * num + 'px';
+          } else {
+            this.refs.carouselUl.style.left = '0px';
+            num = 0;
+          }
+        } else if(Math.abs(X) > Math.abs(Y) && X < -5) {
+          if(num > 1) {
+            num--;
+            this.refs.carouselUl.style.left = - imgWidth * num + 'px';
+          } else if(num == 1){
+            this.refs.carouselUl.style.left = '0px';
+            num = 0;
+          }
+        }
+    })
   }
   render() {
     const list = this.state.list;
@@ -51,10 +89,11 @@ export default class Loading extends Component {
         </a>
       </li>
     ))
+    //console.log(list)
     return (
 	  <header>
         <img className="title-image" src={titleImg} alt=""/>
-        <div className="carousel">
+        <div className="carousel" ref="carousel">
           <ul className="carousel-ul" ref="carouselUl">
             <li className="carousel-li">
               <a href={list[0].url}>
@@ -73,3 +112,13 @@ export default class Loading extends Component {
     )
   }
 }
+
+
+
+
+
+
+
+
+
+
