@@ -40,7 +40,7 @@ export default class Loading extends Component {
     Y,
     num = 1,
     maxNum = this.state.list.length + 1,
-    imgWidth = parseInt(window.getComputedStyle(this.refs.carouselUl.children[0]).width);
+    imgWidth = parseInt(window.getComputedStyle(this.refs.carousel.width));
     setInterval(() => {
       if(num < maxNum) {
        this.refs.carouselUl.style.left = - imgWidth * num + 'px';
@@ -83,11 +83,11 @@ export default class Loading extends Component {
   render() {
     const list = this.state.list;
     const li = list.map((item,index) => (
-      <li className="carousel-li" key={index}>
-        <a href={item.url}>
-          <img src={item.img} alt="" className="carousel-img"/>
-        </a>
-      </li>
+      <a href={item.url}>
+        <li className="carousel-li" key={index}>
+            <img src={item.img} alt="" className="carousel-img"/>
+        </li>
+      </a>
     ))
     //console.log(list)
     return (
@@ -95,17 +95,17 @@ export default class Loading extends Component {
         <img className="title-image" src={titleImg} alt=""/>
         <div className="carousel" ref="carousel">
           <ul className="carousel-ul" ref="carouselUl">
-            <li className="carousel-li">
-              <a href={list[0].url}>
-                <img src={list[0].img} alt="" className="carousel-img"/>
-              </a>
-            </li>
+            <a href={list[0].url}>
+              <li className="carousel-li"> 
+                  <img src={list[0].img} alt="" className="carousel-img"/>
+              </li>
+            </a>
             {li}
-            <li className="carousel-li">
-              <a href={list[list.length-1].url}>
-                <img src={list[list.length-1].img} alt="" className="carousel-img"/>
-              </a>
-            </li>
+            <a href={list[list.length-1].url}>
+              <li className="carousel-li">
+                  <img src={list[list.length-1].img} alt="" className="carousel-img"/>
+              </li>
+            </a>
           </ul>
         </div>
       </header>
