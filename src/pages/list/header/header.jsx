@@ -20,7 +20,7 @@ export default class Loading extends Component {
             method: 'GET'
         }
      
-    fetch('http://hongyan.cqupt.edu.cn/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
+    fetch('/red-wx/RedWeb/RedWeb/imgsUrl.php',mothod)
     .then(res => res.json())
     .then(data => {
       console.log('fetch')
@@ -40,7 +40,7 @@ export default class Loading extends Component {
     Y,
     num = 1,
     maxNum = this.state.list.length + 1,
-    imgWidth = parseInt(window.getComputedStyle(this.refs.carousel.width));
+    imgWidth = parseInt(window.getComputedStyle(this.refs.carousel).width);
     setInterval(() => {
       if(num < maxNum) {
        this.refs.carouselUl.style.left = - imgWidth * num + 'px';
