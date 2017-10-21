@@ -35,10 +35,6 @@ export default class ComponentChoice extends Component {
             <img className="index-list-img" src={dynamicImg} alt=""/>
             <span className="index-list-span">基层动态</span>
           </Link>
-          {/*<Link to="/list/www">
-            <img className="index-list-img" src={wwwImg} alt=""/>
-            <span className="index-list-span">网络活动</span>
-          </Link>*/}
         </li>
         <li className="index-list-li">
           <Link to="/list/era/history">

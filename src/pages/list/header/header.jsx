@@ -49,7 +49,7 @@ export default class Loading extends Component {
         this.refs.carouselUl.style.left = '0px';
         num = 0;
       }
-    },1500)
+    },3000)
     carousel.addEventListener('touchstart',(e) => {
       e.preventDefault();
       startX = e.touches[0].pageX;
