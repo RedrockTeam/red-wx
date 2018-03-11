@@ -6,7 +6,7 @@ export default class Loading extends Component {
             now: {}
         };
     }
-    componentWillMount() {
+    componentDidMount() {
         let mothod = {
             method: 'GET'
         }

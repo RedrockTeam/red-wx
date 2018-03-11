@@ -22,7 +22,7 @@ export default class Loading extends Component {
 		};
     //document.title = '基层动态';
   }
-  componentWillMount() {
+  componentDidMount() {
     let mothod = {
         method: 'GET'
     }

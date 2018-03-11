@@ -10,7 +10,7 @@ export default class Loading extends Component {
 	  };
     //document.title = '时代先锋';
   }
-componentWillMount() {
+componentDidMount() {
   if(this.props.match.params.type === 'history') {
     let mothod = {
         method: 'GET'

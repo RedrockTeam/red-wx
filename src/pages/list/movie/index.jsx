@@ -10,7 +10,7 @@ export default class Loading extends Component {
         };
         //document.title = '影视资料';
     }
-    componentWillMount() {
+    componentDidMount() {
         let mothod = {
             method: 'GET'
         }

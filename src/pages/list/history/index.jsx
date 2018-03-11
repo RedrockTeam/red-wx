@@ -8,7 +8,7 @@ export default class Loading extends Component {
         };
         //document.title = '党史辞典';
     }
-    componentWillMount() {
+    componentDidMount() {
         let mothod = {
             method: 'GET'
         }
